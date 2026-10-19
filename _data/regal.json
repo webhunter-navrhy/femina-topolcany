@@ -1,0 +1,8 @@
+[
+  {"kod": "A1", "nazov": "Kotvy a hmoždinky", "stitok": "fischer · betón, tehla, SDK", "text": "Hmoždinky a kotvy fischer na celej stene predajne – do betónu, tehly, pórobetónu aj sadrokartónu. Poradíme, ktorá unesie poličku, kuchynskú linku alebo bránu.", "polozka": "Hmoždinky / kotvy fischer", "foto": "detail-fischer.jpg", "foto_alt": "Police s krabičkami hmoždiniek fischer a cenovkami v predajni Femina"},
+  {"kod": "A2", "nazov": "Kolieska a kolesá", "stitok": "transportné · s držiakom", "text": "Transportné kolieska s držiakom pre vozíky, regály a manipulačnú techniku. Prineste staré koliesko a porovnáme ho priamo pri regáli.", "polozka": "Transportné koliesko", "foto": "detail-kolieska.jpg", "foto_alt": "Transportné kolieska rôznych veľkostí na žltých policiach predajne"},
+  {"kod": "A3", "nazov": "Železiarsky tovar", "stitok": "na kusy aj vo veľkom", "text": "Klasické železiarstvo: tovar na kusy pre domácnosť aj vo veľkých baleniach pre firmy.", "polozka": "Železiarsky tovar"},
+  {"kod": "B1", "nazov": "Domáce potreby", "stitok": "do domácnosti", "text": "Potreby do domácnosti, dielne a na chalupu – všetko na jednej adrese spolu so železiarstvom.", "polozka": "Domáce potreby"},
+  {"kod": "B2", "nazov": "Športové potreby", "stitok": "podľa ponuky predajne", "text": "Predajňa je vedená aj so športovými potrebami. Čo je práve na sklade, vám povedia v predajni alebo po telefóne.", "polozka": "Športové potreby"},
+  {"kod": "B3", "nazov": "Pre firmy", "stitok": "veľkoobchodný odber", "text": "Veľkoobchodný predaj pre remeselníkov, stavebné firmy a údržbu prevádzok v okolí. Pošlite zoznam a pripravíme ponuku.", "polozka": "Veľkoobchodná ponuka"}
+]

@@ -1,0 +1,40 @@
+{
+ "slug": "femina-topolcany",
+ "zdroj_url": null,
+ "firma": "Femina Slovakia s.r.o.",
+ "obor": ["železiarstvo", "maloobchod a veľkoobchod železiarskeho tovaru", "domáce potreby", "prenájom priestorov"],
+ "mesto": "Topoľčany",
+ "ico": "36409669",
+ "ares": "RPO ŠÚ SR: Femina Slovakia s.r.o., IČO 36409669, vznik 10. 2. 2003, sídlo Kukučínova 989/21 Čadca, konateľ Ing. Peter Dubaj, spoločník FEMINA CZECH s. r. o. (Brno)",
+ "kontakty": {
+  "provozovna": "Dopravná 5, 955 01 Topoľčany",
+  "telefon_pevny": "038 5324 797",
+  "telefon_mobil": "0905 655 919",
+  "telefon_konatel": "0917 652 904 (uvádza Azet pri Luped Slovakia / Fbfans – na web nedávame, kým to klient nepotvrdí)",
+  "email": null
+ },
+ "cilova_skupina": "remeselníci, stavebné a montážne firmy, údržba firiem v priemyselnej zóne, domácnosti z Topoľčian a okolia",
+ "ton": "vecný, miestny, slovenčina; žiadne marketingové frázy",
+ "logo": null,
+ "barvy": {"poznamka": "vlastný brand nemá; v predajni dominuje červená fischer a žlté regály (značka dodávateľa, nie klienta)"},
+ "fotky": [{"soubor": "img/regal-fischer.jpg", "rozliseni": "2400x3200", "zdroj": "Google Maps profil Femina Slovakia s.r.o."}],
+ "fakta": [
+  {"fakt": "Maloobchodný a veľkoobchodný predaj železiarskeho tovaru", "zdroj": "https://www.zoznam.sk/firma/2812436/Femina-Slovakia-Topolcany"},
+  {"fakt": "Adresa predajne Dopravná 5, 955 01 Topoľčany; tel. 038 5324 797, 0905 655 919", "zdroj": "https://www.zoznam.sk/firma/2812436/Femina-Slovakia-Topolcany"},
+  {"fakt": "Zaradenie Železiarstva; Športové potreby", "zdroj": "ZiveFirmy DATABAZE_SK (Zoznam.sk)"},
+  {"fakt": "Google Maps: Predajňa domácich potrieb, hodnotenie 4,6", "zdroj": "Google Maps profil Femina Slovakia s.r.o., 19. 10. 2026"},
+  {"fakt": "Otvorené: pondelok 7:00–15:30; v utorok otvára o 7:00 (ostatné dni neznáme)", "zdroj": "Google Maps, 19. 10. 2026"},
+  {"fakt": "V predajni kotvy a hmoždinky fischer, transportné kolieska", "zdroj": "fotka predajne z Google Maps"},
+  {"fakt": "IČO 36409669, vznik 2003, predmet: maloobchod, veľkoobchod, sprostredkovanie, prenájom hnuteľných vecí, prenájom nehnuteľností", "zdroj": "RPO api.statistics.sk"},
+  {"fakt": "Luped Slovakia s.r.o. (IČO 45305811, Dopravná 5) – prenájom nehnuteľností, rovnaký konateľ", "zdroj": "RPO + registeruz.sk"}
+ ],
+ "chybi": [
+  "logo (ak nejaké máte) – zatiaľ názov textom",
+  "otváracie hodiny na celý týždeň (máme len pondelok 7:00–15:30)",
+  "e-mail predajne",
+  "fotky predajne, regálov, vchodu a parkovania",
+  "hlavné skupiny sortimentu a značky, ktoré vediete",
+  "podmienky pre firmy (veľkoobchod: faktúra, odberateľské ceny, rozvoz?)",
+  "priestory na prenájom: typ, výmera, cena, fotky, od kedy voľné"
+ ]
+}

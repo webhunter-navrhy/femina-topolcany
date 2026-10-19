@@ -1,0 +1,5 @@
+[
+  {"kod": "P1", "nazov": "Priestor 1", "typ": "sklad / dielňa – doplníme", "vymera": "— m²", "cena": "cena dohodou", "volne": "doplníme"},
+  {"kod": "P2", "nazov": "Priestor 2", "typ": "kancelária / predajňa – doplníme", "vymera": "— m²", "cena": "cena dohodou", "volne": "doplníme"},
+  {"kod": "P3", "nazov": "Plocha", "typ": "vonkajšia plocha / parkovanie – doplníme", "vymera": "— m²", "cena": "cena dohodou", "volne": "doplníme"}
+]

@@ -1,0 +1,77 @@
+{% extends "_base.html" %}
+{% set titulek = 'Priestory na prenájom – Dopravná 5, Topoľčany' %}
+{% set popis = 'Priestory na prenájom v areáli na Dopravnej ulici v Topoľčanoch: sklad, kancelária, vonkajšia plocha. Ponuka a dopyt online.' %}
+{% set cesta = 'prenajom/' %}
+{% block obsah %}
+<section class="uvod uvod--pren">
+  <div class="wrap uvod__in">
+    <div class="uvod__text">
+      <p class="adresa-stitok mono">Areál Dopravná · Topoľčany</p>
+      <h1>Priestory na&nbsp;prenájom na&nbsp;Dopravnej.</h1>
+      <p class="uvod__perex">Priemyselná časť Topoľčian, rovnaká adresa ako železiarstvo. Vyberte si priestor a&nbsp;pošlite dopyt – ozveme sa s&nbsp;obhliadkou.</p>
+      <div class="uvod__akcie"><a class="tl tl--plne" href="#ponuka">Ponuka priestorov</a><a class="tl tl--obrys" href="#dopyt">Poslať dopyt</a></div>
+    </div>
+    <figure class="mapa">
+      <a href="{{ site.mapa }}" rel="noopener" target="_blank" class="mapa__odkaz">
+        {{ img('mapa-dopravna.png', 'Mapa okolia areálu na Dopravnej ulici v Topoľčanoch, poloha vyznačená žltým bodom', sizes='(min-width: 52rem) 34rem, 100vw', cls='mapa__img') }}
+        <span class="mapa__stitok"><span class="mono">Areál</span> Dopravná 5</span>
+      </a>
+      <figcaption class="mapa__popis"><span class="mono">Mapa © prispievatelia OpenStreetMap</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sekce pren" id="ponuka" aria-labelledby="pren-ponuka">
+  <div class="wrap">
+    <h2 id="pren-ponuka" class="sr-only">Ponuka priestorov</h2>
+    <ul class="pren__zoznam" role="list">
+      {% for p in data.prenajom %}
+      <li class="pren__karta">
+        <div class="pren__stitok"><span class="mono">{{ p.kod }}</span> {{ p.nazov }}</div>
+        <div class="pren__foto" aria-hidden="true"><span class="mono">fotka priestoru – doplníme</span></div>
+        <dl class="pren__param">
+          <div><dt class="mono">Typ</dt><dd>{{ p.typ }}</dd></div>
+          <div><dt class="mono">Výmera</dt><dd>{{ p.vymera }}</dd></div>
+          <div><dt class="mono">Cena</dt><dd>{{ p.cena }}</dd></div>
+          <div><dt class="mono">Voľné od</dt><dd>{{ p.volne }}</dd></div>
+        </dl>
+        <a class="tl tl--obrys js-zaujem" data-priestor="{{ p.kod }} {{ p.nazov }}" href="#dopyt">Mám záujem</a>
+      </li>
+      {% endfor %}
+    </ul>
+    <p class="regal__pozn mono">Návrh: typy, výmery, ceny a fotky priestorov doplníme podľa vás. Ponuka sa mení v&nbsp;administrácii.</p>
+  </div>
+</section>
+
+<section class="sekce firmy" id="dopyt" aria-labelledby="dopyt-h">
+  <div class="wrap firmy__in">
+    <div class="firmy__text">
+      <h2 id="dopyt-h">Dopyt na&nbsp;prenájom</h2>
+      <p>Napíšte, aký priestor hľadáte a&nbsp;od kedy. Ozveme sa a&nbsp;dohodneme obhliadku na&nbsp;Dopravnej 5.</p>
+      <p class="firmy__pozn">Alebo volajte: <a href="tel:+421385324797">038 5324 797</a></p>
+    </div>
+    <form class="listok formular" method="post" data-endpoint="{{ site.formular.endpoint }}" data-demo="1" aria-labelledby="dopyt-form-h">
+      <div class="listok__hlava">
+        <h3 id="dopyt-form-h">Dopyt</h3>
+        <p class="mono">Prenájom · Dopravná</p>
+      </div>
+      <div class="listok__kontakt">
+        <label>Priestor
+          <select name="priestor" id="priestor">
+            <option>Zatiaľ neviem – poraďte</option>
+            {% for p in data.prenajom %}<option>{{ p.kod }} {{ p.nazov }}</option>{% endfor %}
+          </select>
+        </label>
+        <label>Od kedy <input name="od" placeholder="napr. od januára"></label>
+        <label class="cela">Na čo priestor potrebujete <textarea name="ucel" rows="3" placeholder="sklad materiálu, dielňa, parkovanie dodávok…"></textarea></label>
+        <label>Meno <input name="meno" autocomplete="name" required></label>
+        <label>Telefón alebo e-mail <input name="kontakt" autocomplete="tel" required></label>
+      </div>
+      <div class="past" aria-hidden="true"><label>Nevypĺňať <input name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+      <input type="hidden" name="_subject" value="Dopyt na prenájom z webu">
+      <button type="submit" class="tl tl--zlte">Odoslať dopyt</button>
+      <p class="formular-stav" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+{% endblock %}

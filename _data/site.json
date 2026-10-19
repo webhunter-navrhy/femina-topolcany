@@ -1,0 +1,71 @@
+{
+  "slug": "femina-topolcany",
+  "nazev": "Femina Slovakia s.r.o.",
+  "znacka": "FEMINA",
+  "podtitul": "železiarstvo · Topoľčany",
+  "url": "https://webhunter-navrhy.github.io/femina-topolcany/",
+  "base": "/femina-topolcany/",
+  "lang": "sk",
+  "popis": "Železiarstvo Femina na Dopravnej 5 v Topoľčanoch – maloobchod aj veľkoobchod: kotvy a hmoždinky, kolieska, železiarsky tovar a domáce potreby.",
+  "navrh": true,
+  "domena": "",
+  "og_image": "regal-fischer.jpg",
+  "logo": "",
+  "theme_color": "#F1F1EE",
+  "typ": "HardwareStore",
+  "ico": "36409669",
+  "kontakt": {
+    "email": "",
+    "telefon": "038 5324 797",
+    "mobil": "0905 655 919",
+    "adresa": {
+      "ulice": "Dopravná 5",
+      "psc": "955 01",
+      "mesto": "Topoľčany",
+      "zeme": "SK"
+    }
+  },
+  "mapa": "https://www.google.com/maps/search/?api=1&query=Femina+Slovakia+s.r.o.+Dopravn%C3%A1+5+Topo%C4%BE%C4%8Dany",
+  "hodiny": [
+    {
+      "den": "Pondelok",
+      "cas": "7:00 – 15:30"
+    },
+    {
+      "den": "Utorok",
+      "cas": "od 7:00"
+    },
+    {
+      "den": "Ostatné dni",
+      "cas": "zavolajte 038 5324 797"
+    }
+  ],
+  "oteviraci_doba": [
+    "Mo 07:00-15:30"
+  ],
+  "sameas": [],
+  "cenove_rozpeti": "",
+  "formular": {
+    "endpoint": "",
+    "demo": true,
+    "predmet": "Nákupný lístok z webu"
+  },
+  "nav": [
+    {
+      "text": "Sortiment",
+      "href": "#regal"
+    },
+    {
+      "text": "Pre firmy",
+      "href": "#firmy"
+    },
+    {
+      "text": "Prenájom",
+      "href": "prenajom"
+    },
+    {
+      "text": "Kontakt",
+      "href": "#navsteva"
+    }
+  ]
+}

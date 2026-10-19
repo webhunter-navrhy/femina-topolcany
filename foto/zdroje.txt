@@ -1,0 +1,3 @@
+regal-fischer.jpg – fotka provozovne Femina Slovakia s.r.o. z profilu na Google Maps (Dopravná 5, Topoľčany), 2400×3200, staženo 19. 10. 2026. Pro návrh; před spuštěním nahradit vlastními fotkami klienta.
+mapa-dopravna.png – výřez mapy © OpenStreetMap contributors (ODbL), dlaždice z tile.openstreetmap.org, z=17, střed 48.5525585, 18.1607712 (poloha Femina z Google Maps), převedeno do šedé + žlutý bod; 19. 10. 2026
+detail-fischer.jpg, detail-kolieska.jpg – výřezy z regal-fischer.jpg (stejný zdroj: Google Maps profil predajne).

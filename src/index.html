@@ -1,0 +1,150 @@
+{% extends "_base.html" %}
+{% set titulek = 'Železiarstvo Femina Topoľčany – Dopravná 5, maloobchod aj veľkoobchod' %}
+{% set cesta = '' %}
+{% block obsah %}
+<section class="uvod">
+  <div class="wrap uvod__in">
+    <div class="uvod__text">
+      <p class="adresa-stitok mono">Dopravná 5 · Topoľčany</p>
+      <h1>Železiarstvo na&nbsp;Dopravnej.</h1>
+      <p class="uvod__perex">Kotvy, hmoždinky, kolieska, železiarsky tovar a&nbsp;domáce potreby. Na&nbsp;kusy pre domácnosť aj vo&nbsp;veľkom pre firmy a&nbsp;remeselníkov.</p>
+      <div class="uvod__akcie">
+        <a class="tl tl--plne" href="#regal">Pozrieť sortiment</a>
+        <a class="tl tl--obrys" href="#listok">Poslať nákupný lístok</a>
+      </div>
+    </div>
+    <dl class="cenovka" aria-label="Otváracie hodiny a telefón">
+        <div><dt class="mono">Pondelok</dt><dd>7:00 – 15:30</dd></div>
+        <div><dt class="mono">Telefón</dt><dd><a href="tel:+421385324797">038 5324 797</a></dd></div>
+        <div><dt class="mono">Mobil</dt><dd><a href="tel:+421905655919">0905 655 919</a></dd></div>
+      </dl>
+    <figure class="uvod__foto">
+      {{ img('regal-fischer.jpg', 'Regál s hmoždinkami a kotvami fischer a policami s transportnými kolieskami v predajni Femina na Dopravnej v Topoľčanoch', sizes='(min-width: 64rem) 34rem, 100vw', cls='uvod__img') }}
+      <figcaption class="visacka"><span class="mono">A1</span> Kotvy a hmoždinky fischer — priamo z&nbsp;predajne</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sekce regal-sekcia" id="regal" aria-labelledby="regal-h">
+  <div class="wrap">
+    <div class="hlava">
+      <h2 id="regal-h">Čo nájdete v&nbsp;regáloch</h2>
+      <p>Vyberte priehradku. Ukážeme, čo v&nbsp;nej je, a&nbsp;jedným klikom ju pridáte do nákupného lístka – v&nbsp;predajni vám tovar pripravia.</p>
+    </div>
+    <div class="regal">
+      <div class="regal__ram" role="list">
+        {% for b in data.regal %}
+        <div role="listitem" class="regal__miesto">
+          <button type="button" class="priehradka" data-i="{{ loop.index0 }}" aria-controls="regal-detail" aria-pressed="{{ 'true' if loop.first else 'false' }}">
+            <span class="priehradka__predok" aria-hidden="true"></span>
+            <span class="priehradka__stitok"><span class="mono priehradka__kod">{{ b.kod }}</span><span class="priehradka__nazov">{{ b.nazov }}</span><span class="mono priehradka__pod">{{ b.stitok }}</span></span>
+          </button>
+        </div>
+        {% endfor %}
+      </div>
+      <aside class="regal__detail" id="regal-detail" aria-live="polite">
+        {% set b = data.regal[0] %}
+        <div class="regal__fotky">
+          {% for x in data.regal %}{% if x.get('foto') %}<div class="regal__foto" data-foto="{{ loop.index0 }}"{% if not loop.first %} hidden{% endif %}>{{ img(x.foto, x.foto_alt, sizes='(min-width: 64rem) 26rem, 100vw', eager=False) }}</div>{% endif %}{% endfor %}
+        </div>
+        <p class="mono regal__detail-kod">Priehradka {{ b.kod }}</p>
+        <h3 class="regal__detail-nazov">{{ b.nazov }}</h3>
+        <p class="regal__detail-text">{{ b.text }}</p>
+        <div class="regal__detail-akcie">
+          <button type="button" class="tl tl--plne js-pridaj" data-polozka="{{ b.polozka }}">Pridať do lístka</button>
+          <a class="regal__tel" href="tel:+421385324797">Opýtať sa na&nbsp;sklad</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+  <script type="application/json" id="regal-data">{{ data.regal|tojson }}</script>
+</section>
+
+<section class="sekce firmy" id="firmy" aria-labelledby="firmy-h">
+  <div class="wrap firmy__in">
+    <div class="firmy__text">
+      <h2 id="firmy-h">Pre firmy a&nbsp;remeselníkov</h2>
+      <p>Femina predáva maloobchodne aj veľkoobchodne. Kto robí montáže, údržbu alebo stavby, nemusí stáť pri pulte: pošle zoznam, predajňa ho pripraví a&nbsp;ozve sa s&nbsp;cenou.</p>
+      <ul class="firmy__zoznam" role="list">
+        <li><span class="policko" aria-hidden="true"></span><span>Napíšete položky, rozmery a&nbsp;počet kusov</span></li>
+        <li><span class="policko" aria-hidden="true"></span><span>Predajňa skontroluje sklad a&nbsp;ozve sa vám</span></li>
+        <li><span class="policko" aria-hidden="true"></span><span>Tovar si vyzdvihnete na&nbsp;Dopravnej&nbsp;5</span></li>
+      </ul>
+      <p class="firmy__pozn">Pri väčšom alebo pravidelnom odbere sa dohodneme na&nbsp;podmienkach.</p>
+    </div>
+    <form class="listok formular" id="listok" method="post" data-endpoint="{{ site.formular.endpoint }}" data-demo="{{ 1 if site.formular.demo or not site.formular.endpoint else 0 }}" aria-labelledby="listok-h">
+      <div class="listok__hlava">
+        <h3 id="listok-h">Nákupný lístok</h3>
+        <p class="mono">Femina · Dopravná 5</p>
+      </div>
+      <div class="listok__riadky" data-riadky>
+        <div class="listok__zahlavie mono" aria-hidden="true"><span>Položka</span><span>Rozmer / typ</span><span>Ks</span><span></span></div>
+        <div class="listok__riadok">
+          <label><span class="sr-only">Položka 1</span><input name="polozka[]" placeholder="napr. hmoždinka fischer SX" required></label>
+          <label><span class="sr-only">Rozmer alebo typ 1</span><input name="rozmer[]" placeholder="8 × 40"></label>
+          <label><span class="sr-only">Počet kusov 1</span><input name="ks[]" inputmode="numeric" placeholder="50"></label>
+          <button type="button" class="listok__zmaz" aria-label="Odstrániť riadok">×</button>
+        </div>
+      </div>
+      <button type="button" class="listok__pridaj" data-pridaj-riadok>+ pridať riadok</button>
+      <div class="listok__kontakt">
+        <label>Meno <input name="meno" autocomplete="name" required></label>
+        <label>Telefón alebo e-mail <input name="kontakt" autocomplete="tel" required></label>
+        <label><span>Firma <span class="nepov">(nepovinné)</span></span> <input name="firma" autocomplete="organization"></label>
+        <label>Chcem
+          <select name="ziadost">
+            <option>Pripraviť na vyzdvihnutie</option>
+            <option>Poslať cenovú ponuku</option>
+          </select>
+        </label>
+      </div>
+      <div class="past" aria-hidden="true"><label>Nevypĺňať <input name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+      <input type="hidden" name="_subject" value="{{ site.formular.predmet }}">
+      <button type="submit" class="tl tl--zlte">Odoslať lístok do predajne</button>
+      <p class="formular-stav" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<section class="prenajom-pas" aria-labelledby="pren-h">
+  <div class="wrap prenajom-pas__in">
+    <a class="prenajom-pas__mapa" href="{{ url('prenajom') }}" tabindex="-1" aria-hidden="true">{{ img('mapa-dopravna.png', '', sizes='(min-width: 52rem) 32rem, 100vw') }}</a>
+    <div>
+      <h2 id="pren-h">Priestory na&nbsp;prenájom v&nbsp;areáli na&nbsp;Dopravnej</h2>
+      <p>Sklad, kancelária alebo plocha v&nbsp;priemyselnej časti Topoľčian. Ponuku s&nbsp;výmerami nájdete na&nbsp;samostatnej stránke.</p>
+    </div>
+    <a class="tl tl--obrys" href="{{ url('prenajom') }}">Pozrieť priestory</a>
+  </div>
+</section>
+
+<section class="sekce navsteva" id="navsteva" aria-labelledby="nav-h">
+  <div class="wrap navsteva__in">
+    <div class="navsteva__text">
+      <h2 id="nav-h">Kde nás nájdete</h2>
+      <address class="navsteva__adresa">Dopravná 5<br>955 01 Topoľčany</address>
+      <div class="navsteva__tabulky">
+        <table class="hodiny">
+          <caption class="mono">Otváracie hodiny</caption>
+          <tbody>
+            {% for h in site.hodiny %}<tr><th scope="row">{{ h.den }}</th><td>{{ h.cas }}</td></tr>{% endfor %}
+          </tbody>
+        </table>
+        <table class="hodiny">
+          <caption class="mono">Telefón</caption>
+          <tbody>
+            <tr><th scope="row">Predajňa</th><td><a href="tel:+421385324797">038 5324 797</a></td></tr>
+            <tr><th scope="row">Mobil</th><td><a href="tel:+421905655919">0905 655 919</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <figure class="mapa">
+      <a href="{{ site.mapa }}" rel="noopener" target="_blank" class="mapa__odkaz">
+        {{ img('mapa-dopravna.png', 'Mapa okolia: predajňa Femina na Dopravnej ulici v priemyselnej časti Topoľčian, vyznačená žltým bodom', sizes='(min-width: 52rem) 38rem, 100vw', cls='mapa__img') }}
+        <span class="mapa__stitok"><span class="mono">Femina</span> Dopravná 5</span>
+      </a>
+      <figcaption class="mapa__popis"><a class="tl tl--plne" href="{{ site.mapa }}" rel="noopener" target="_blank">Navigovať v&nbsp;Mapách Google</a><span class="mono">Mapa © prispievatelia OpenStreetMap</span></figcaption>
+    </figure>
+  </div>
+</section>
+{% endblock %}
